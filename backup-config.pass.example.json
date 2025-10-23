@@ -1,0 +1,28 @@
+{
+    "restic-repo": "/path/to/restic-repository",
+    "log-path": "/var/log/restic-backups",
+    "secrets-method": "pass",
+    "pass-entry": "infra/restic/local",
+    "docker-apps": [
+        {
+            "name": "app-name",
+            "path": "/path/to/docker-compose-app",
+            "additional-paths": [
+                "/path/to/additional/data"
+            ],
+            "start_cmd": "docker#compose#up#-d",
+            "stop_cmd": "docker#compose#down"
+        },
+        {
+            "name": "postgres-backup",
+            "path": "/path/to/db-backups",
+            "bkp_cmd": "docker#exec#postgres-container#pg_dump#-U#postgres#dbname#>#database.sql"
+        }
+    ],
+    "additional-backups": [
+        {
+            "name": "backup-name",
+            "path": "/path/to/backup"
+        }
+    ]
+}

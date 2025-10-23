@@ -1,0 +1,9 @@
+.vscode/**/*
+.continue/**/*
+CLAUDE.md
+
+testing-folders/**/*
+analysis/
+
+backup-config.json
+local-check.backup-config.json
